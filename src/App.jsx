@@ -4,7 +4,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Legend from './assets/Legend'
 import legList from './list.json'
-import { toPng } from 'html-to-image'
 
 function App() {
   const legs = legList
@@ -23,16 +22,9 @@ function App() {
     setExpectedLegs(Math.trunc(e.target.value/4000))
   }
 
-  const download = () => {
-    htmlToImage.toPng(document.getElementById('my-node'))
-    .then(function (dataUrl) {
-      download(dataUrl, 'my-node.png');
-    });
-  }
-
   return (
     <>
-      <div id="my-node" className='bg-gray-900 py-8 min-h-full flex justify-center'>
+      <div id="my-node" className='bg-gray-900 py-8 h-full flex justify-center'>
         <div className='bg-gray-600 p-4 drop-shadow-xl w-10/12 rounded-xl flex flex-wrap justify-between gap-8'>
           {
             legs.map((leg,key) => {
@@ -64,7 +56,6 @@ function App() {
               <input className='mt-2 flex items-center justify-center rounded-xl border bg-white/0 p-3 text-sm border-gray-800' type="number" name="totalLegs" value={total} disabled/>
             </div>
           </div>
-          <button onClick={download}>Download Image</button>
         </div>
       </div>
     </>
