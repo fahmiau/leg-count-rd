@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <div id="my-node" className='bg-gray-900 py-8 h-full flex justify-center'>
+      <div id="my-node" className='bg-gray-900 py-auto min-h-screen flex justify-center items-center '>
         <div className='bg-gray-600 p-4 drop-shadow-xl w-10/12 rounded-xl flex flex-wrap justify-between gap-8'>
           {
             legs.map((leg,key) => {
@@ -35,25 +35,29 @@ function App() {
               )
             })
           }
-          <div className="bg-gray-200 w-80 h-36 grow rounded-lg p-4 grid grid-cols-4">
-            <div>
-              <label htmlFor="cards" className='text-sm text-navy-700 font-bold'>Total Cards</label>
-              <input onChange={totalChest} className='mt-2 flex items-center justify-center rounded-xl border bg-white/0 p-3 text-sm border-gray-800' type="number" name="cards" />
+          <div className="bg-gray-200 w-full lg:w-3/4 xl:w-1/2 grow rounded-lg p-4 grid grid-cols-4 gap-2">
+            <div className=''>
+              <label htmlFor="cards" className='text-lg text-gray-900 font-bold'>Total Cards</label>
+              <input onChange={totalChest} className='w-5/6 flex items-center justify-center rounded-xl font-bold border bg-white/0 p-3 text-lg border-gray-800' type="number" name="cards" placeholder='ex. 100000'/>
             </div>
 
             <div>
-              <label htmlFor="chest" className='text-sm text-navy-700 font-bold'>Total Chests</label>
-              <input className='mt-2 flex items-center justify-center rounded-xl border bg-white/0 p-3 text-sm border-gray-800' type="number" name="chest" value={chests} disabled/>
+              <h5 className='font-bold text-lg text-gray-900'>Total Chests</h5>
+              <h5 className='font-bold text-lg mt-2 text-blue-800'>{chests}</h5>
             </div>
 
             <div>
-              <label htmlFor="expected" className='text-sm text-navy-700 font-bold'>Expected Legs</label>
-              <input className='mt-2 flex items-center justify-center rounded-xl border bg-white/0 p-3 text-sm border-gray-800' type="number" name="expected" value={expectedLegs} disabled/>
+              <h5 className='font-bold text-lg text-gray-900'>Expected Legs</h5>
+              <h5 className='font-bold text-lg mt-2 text-blue-800'>{expectedLegs}</h5>
+              {/* <label htmlFor="expected" className='text-sm text-navy-700 font-bold'>Expected Legs</label>
+              <input className='mt-2 flex items-center justify-center rounded-xl border bg-white/0 p-3 text-sm border-gray-800' type="number" name="expected" value={expectedLegs} disabled/> */}
             </div>
             
             <div>
-              <label htmlFor="totalLegs" className='text-sm text-navy-700 font-bold'>Current Legs</label>
-              <input className='mt-2 flex items-center justify-center rounded-xl border bg-white/0 p-3 text-sm border-gray-800' type="number" name="totalLegs" value={total} disabled/>
+              <h5 className='font-bold text-lg text-gray-900'>Current Count</h5>
+              <h5 className='font-bold text-lg mt-2 text-blue-800'>{total}</h5>
+              {/* <label htmlFor="totalLegs" className='text-sm text-navy-700 font-bold'>Current Legs</label>
+              <input className='mt-2 flex items-center justify-center rounded-xl border bg-white/0 p-3 text-sm border-gray-800' type="number" name="totalLegs" value={total} disabled/> */}
             </div>
           </div>
         </div>
