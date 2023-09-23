@@ -1,17 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Legend from './assets/Legend'
 import legList from './list.json'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function App() {
   const legs = legList
-
+  const MySwal = withReactContent(Swal)
   const [total,setTotal] = useState(0);
 
-  const totalCount = () => {
+  const addTtotalCount = () => {
     setTotal(total+1)
+  }
+
+  const subTtotalCount = () => {
+    setTotal(total-1)
   }
 
   const [chests,setChest] = useState(0);
@@ -22,6 +26,24 @@ function App() {
     setExpectedLegs(Math.trunc(e.target.value/4000))
   }
 
+  useEffect(() => {
+    // alert('Click dice ICON to add \nClick dice NAME to subtract (in case u miss clicked) ')
+    MySwal.fire({
+      titleText: 'How to Use',
+      html:'<p>Click dice <b>ICON</b> to add, Click dice <b>NAME</b> to subtract (in case u miss clicked)</p>'
+    })
+  }, []);
+
+  window.onbeforeunload = (event) => {
+    const e = event || window.event;
+    // Cancel the event
+    e.preventDefault();
+    if (e) {
+      e.returnValue = ''; // Legacy method for cross browser support
+    }
+    return ''; // Legacy method for cross browser support
+  };
+
   return (
     <>
       <div id="my-node" className='bg-gray-900 py-auto min-h-screen flex justify-center items-center '>
@@ -29,13 +51,13 @@ function App() {
           {
             legs.map((leg,key) => {
               return(
-                <div onClick={totalCount} key={key}>
-                  <Legend name={leg[0]} link={leg[1]}></Legend>
+                <div key={key}>
+                  <Legend add={addTtotalCount} sub={subTtotalCount} name={leg[0]} link={leg[1]}></Legend>
                 </div>
               )
             })
           }
-          <div className="bg-gray-200 w-full lg:w-3/4 xl:w-1/2 grow rounded-lg p-4 grid grid-cols-4 gap-2">
+          <div className="bg-gray-200 w-full lg:w-3/4 xl:w-1/2 grow rounded-lg p-4 grid grid-cols-4 gap-2 items-center">
             <div className=''>
               <label htmlFor="cards" className='text-lg text-gray-900 font-bold'>Total Cards</label>
               <input onChange={totalChest} className='w-5/6 flex items-center justify-center rounded-xl font-bold border bg-white/0 p-3 text-lg border-gray-800' type="number" name="cards" placeholder='ex. 100000'/>
