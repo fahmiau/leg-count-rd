@@ -19,7 +19,7 @@ const Legend = (props) => {
       <div onClick={()=>{addition();props.add()}} className="h-20 w-20 cursor-pointer transtition hover:-translate-y-1 hover:scale-110 ">
         <img className="h-20 w-20 " src={"/dice/"+props.link} alt="" />
       </div>
-      <h5 className="font-bold text-lg text-blue-800">{count}</h5>
+      <h5 className={'font-bold text-lg '+ ((count == 0) ? 'text-red-500' : 'text-blue-700')}>{count}</h5>
       {/* <button className='border border-black h-1 bg-red-600 w-4' onClick={minus}>-</button> */}
     </div>
 
