@@ -50,7 +50,7 @@ function App() {
   return (
     <>
       <div id="my-node" className='bg-gray-900 py-auto min-h-screen flex justify-center items-center '>
-        <div className='bg-gray-600 p-4 drop-shadow-xl w-10/12 rounded-xl flex flex-wrap justify-between gap-8'>
+        <div className='bg-gray-600 p-4 drop-shadow-xl max-2xl:mx-4 xl:w-full 2xl:w-10/12 rounded-xl grid grid-cols-10 max-xl:grid-cols-8 max-md:grid-cols-4 max-lg:grid-cols-6 gap-6'>
           {
             legs.map((leg,key) => {
               return(
@@ -60,29 +60,32 @@ function App() {
               )
             })
           }
-          <div className="bg-gray-200 w-full lg:w-3/4 xl:w-1/2 grow rounded-lg p-4 grid grid-cols-4 gap-4 items-center">
-            <div className=''>
-              <label htmlFor="cards" className=' text-gray-900 font-bold'>Total Cards</label>
-              <input onChange={totalChest} className='w-5/6 flex items-center justify-center rounded-xl font-bold border bg-white/0 p-2 border-gray-800' type="number" name="cards" placeholder='ex. 100000'/>
-            </div>
+          <div className='xl:col-start-5 xl:col-end-11 lg:col-start-5 lg:col-end-9 md:col-start-3 md:col-end-7 sm:col-start-1 sm:col-end-5'>
 
-            <div className=''>
-              <h5 className='font-bold text-gray-900'>Total Chests</h5>
-              <h5 className='font-bold text-blue-800 text-lg'>{chests}</h5>
-            </div>
+            <div className="bg-gray-200 h-36 rounded-lg p-4 grid grid-cols-4 gap-4 items-center">
+              <div className='max-xl:col-span-2'>
+                <label htmlFor="cards" className=' text-gray-900 font-bold'>Total Cards</label>
+                <input onChange={totalChest} className='w-5/6 flex items-center justify-center rounded-xl font-bold border bg-white/0 p-2 border-gray-800' type="number" name="cards" placeholder='ex. 100000'/>
+              </div>
 
-            <div className=''>
-              <h5 className='font-bold text-gray-900'>Golds Obtained</h5>
-              <h5 className='font-bold text-blue-800 text-lg'>{golds}</h5>
-              <h5 className='font-bold text-gray-900'>Gems Obtained</h5>
-              <h5 className='font-bold text-blue-800 text-lg'>{gems}</h5>
-            </div>
-            
-            <div className=''>
-              <h5 className='font-bold text-gray-900'>Expected Legs</h5>
-              <h5 className='font-bold text-blue-800 text-lg'>{expectedLegs}</h5>
-              <h5 className='font-bold text-gray-900'>Current Count</h5>
-              <h5 className='font-bold text-blue-800 text-lg'>{total}</h5>
+              <div className=''>
+                <h5 className='font-bold text-gray-900'>Total Chests</h5>
+                <h5 className='font-bold text-blue-800 text-lg'>{chests}</h5>
+              </div>
+
+              <div className='max-xl:hidden'>
+                <h5 className='font-bold text-gray-900'>Golds Obtained</h5>
+                <h5 className='font-bold text-blue-800 text-lg'>{golds}</h5>
+                <h5 className='font-bold text-gray-900'>Gems Obtained</h5>
+                <h5 className='font-bold text-blue-800 text-lg'>{gems}</h5>
+              </div>
+              
+              <div className=''>
+                <h5 className='max-xl:tracking-tight font-bold text-gray-900'>Expected Legs</h5>
+                <h5 className='font-bold text-blue-800 text-lg'>{expectedLegs}</h5>
+                <h5 className='max-xl:tracking-tight font-bold text-gray-900'>Current Count</h5>
+                <h5 className='font-bold text-blue-800 text-lg'>{total}</h5>
+              </div>
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ const Legend = (props) => {
   }
   return (
 
-    <div className="bg-gray-200 w-32 h-36 flex flex-col justify-center items-center rounded-lg drop-shadow-xl">
+    <div className="bg-gray-200 h-36 flex flex-col justify-center items-center rounded-lg drop-shadow-xl">
       <h5 onClick={()=>{substraction();props.sub()}} className="font-bold text-sm text-center mb-2 cursor-pointer hover:text-red-500">
         {props.name}
       </h5>
