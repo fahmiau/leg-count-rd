@@ -13,7 +13,7 @@ const Legend = (props) => {
   return (
 
     <div className="bg-gray-200 h-36 flex flex-col justify-center items-center rounded-lg drop-shadow-xl">
-      <h5 onClick={()=>{substraction();props.sub()}} className="font-bold text-sm text-center mb-2 cursor-pointer hover:text-red-500 max-sm:">
+      <h5 onClick={()=>{substraction();props.sub()}} className="font-bold text-sm max-sm:text-xs text-center mb-2 cursor-pointer hover:text-red-500 max-sm:">
         {props.name}
       </h5>
       <div onClick={()=>{addition();props.add()}} className="max-sm:h-14 max-sm:w-14 h-20 w-20 cursor-pointer transtition hover:-translate-y-1 hover:scale-110 ">
