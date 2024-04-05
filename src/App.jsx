@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     MySwal.fire({
       titleText: 'How to Use',
-      html:'<p>Click dice <b>ICON</b> to add, Click dice <b>NAME</b> to subtract (in case u miss clicked)</p>'
+      html:'<p>If you have dice icon/image for the rest of the dice, mention @au in Playmates server. <br><br> Click dice <b>ICON</b> to add, Click dice <b>NAME</b> to subtract (in case u miss clicked)</p>'
     })
   }, []);
 
