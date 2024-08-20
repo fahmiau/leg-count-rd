@@ -8,7 +8,9 @@
 ["Devil","devil.png"],
 ["Dimension","dimension.png"],
 ["Earthquake","earthquake.png"],
+["Echo","echo.png"],
 ["Flow","flow.png"],
+["Forge","forge.png"],
 ["Giga","giga.png"],
 ["Gravity","gravity.png"],
 ["Growth","growth.png"],
@@ -23,6 +25,7 @@
 ["Lightning Cloud","lightning cloud.png"],
 ["Lunar","lunar.png"],
 ["Metastasis","metastasis.png"],
+["Monolith","monolith.png"],
 ["Nuke","nuke.png"],
 ["Overheat","overheat.png"],
 ["Phantom Thief","phantom thief.png"],
@@ -47,5 +50,6 @@
 ["Tsunami","tsunami.png"],
 ["Typhoon","typhoon.png"],
 ["Variable","variable.png"],
+["Volcano","volcano.png"],
 ["Yinyang","yinyang.png"]
 ]
